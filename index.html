@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising Intern Dashboard | She Can Foundation</title>
+    <meta name="description" content="Dashboard for fundraising interns to track progress and campaigns">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="notification-banner">
+        <p>Welcome back, Vyankatesh! <span id="last-login">Last login: Today at 10:30 AM</span></p>
+    </div>
+
+    <header class="fade-in">
+        <div class="header-content">
+            <div class="logo">
+                <img src="company logo.jpg" alt="logo">
+                <h1>Fundraising Intern Dashboard</h1>
+            </div>
+            <div class="user-profile">
+                <img src="profile.jpg" alt="Profile" class="profile-pic">
+                <span class="user-name">Vyankatesh Pingale</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <button id="darkModeToggle" class="theme-toggle">🌙</button>
+        </div>
+        
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Campaigns</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Messages <span class="badge">3</span></a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="dashboard-grid">
+            <section class="card profile-card slide-up">
+                <div class="card-header">
+                    <h2><i class="fas fa-user"></i> Intern Profile</h2>
+                    <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-pic-large">
+                        <img src="profile.jpg" alt="Profile">
+                    </div>
+                    <div class="profile-details">
+                        <p><strong>Name:</strong> Vyankatesh Pingale</p>
+                        <p><strong>Email:</strong>  vyankateshpingle@gmail.com</p>
+                        <p><strong>Role:</strong> Fundraising Intern</p>
+                        <p><strong>Join Date:</strong> July 15, 2025</p>
+                        <p><strong>Performance:</strong> <span class="rating">★★★★☆</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card progress-card slide-up">
+                <div class="card-header">
+                    <h2><i class="fas fa-bullseye"></i> Fundraising Progress</h2>
+                    <div class="timeframe-selector">
+                        <select id="timeframe">
+                            <option value="weekly">This Week</option>
+                            <option value="monthly" selected>This Month</option>
+                            <option value="quarterly">This Quarter</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="progress-content">
+                    <div class="progress-stats">
+                        <div class="stat">
+                            <span class="stat-label">Target</span>
+                            <span class="stat-value">₹10,000</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Raised</span>
+                            <span class="stat-value">₹3,500</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Remaining</span>
+                            <span class="stat-value">₹6,500</span>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-percent" id="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-details">
+                        <p>You've reached <strong>35%</strong> of your monthly target. Keep it up!</p>
+                        <button class="btn-action"><i class="fas fa-bullhorn"></i> View Campaigns</button>
+                        <button class="btn-action"><i class="fas fa-plus-circle"  ></i> Add Donation</button>
+                        <button class="btn-action"><i class="fas fa-plus"></i> New Campaigns</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card leaderboard-card slide-up">
+                <div class="card-header">
+                    <h2><i class="fas fa-trophy"></i> Top Fundraisers</h2>
+                    <button class="btn-refresh"><i class="fas fa-sync-alt"></i></button>
+                </div>
+                <ol class="leaderboard-list">
+                    <li>
+                        <span class="rank">1</span>
+                        <span class="user">
+                            <img src="profile.jpg" alt="Vyankatesh">
+                            Vyankatesh Pingale
+                        </span>
+                        <span class="amount">₹8,000</span>
+                    </li>
+                    <li>
+                        <span class="rank">2</span>
+                        <span class="user">
+                            <img src="kp.jpg" alt="Krishna">
+                            Krishna Patil
+                        </span>
+                        <span class="amount">₹6,000</span>
+                    </li>
+                    <li>
+                        <span class="rank">3</span>
+                        <span class="user">
+                            <img src="mayur.jpg.png" alt="Mayur">
+                            Mayur Suryavanshi
+                        </span>
+                        <span class="amount">₹4,000</span>
+                    </li>
+                    <li>
+                        <span class="rank">4</span>
+                        <span class="user">
+                            <img src="profile2.jpg" alt="Nikhil">
+                            Nikhil Patil
+                        </span>
+                        <span class="amount">₹3,200</span>
+                    </li>
+                    <li>
+                        <span class="rank">5</span>
+                        <span class="user">
+                            <img src="gopal.jpg" alt="Gopal">
+                           Gopal Saindane
+                        </span>
+                        <span class="amount">₹2,800</span>
+                    </li>
+                </ol>
+                <div class="leaderboard-footer">
+                    <button class="btn-secondary">View All</button>
+                    <p>Last updated: Today at 11:45 AM</p>
+                </div>
+            </section>
+
+            <section class="card campaigns-card slide-up">
+                <div class="card-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Active Campaigns</h2>
+                    <button class="btn-add"><i class="fas fa-plus"></i> New</button>
+                </div>
+                <div class="campaigns-grid">
+                    <div class="campaign-item">
+                        <div class="campaign-badge" style="background-color: #4e73df;">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="campaign-details">
+                            <h3>Education for All</h3>
+                            <p>₹2,500 of ₹5,000 raised</p>
+                            <div class="mini-progress">
+                                <div class="mini-progress-fill" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="campaign-item">
+                        <div class="campaign-badge" style="background-color: #1cc88a;">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="campaign-details">
+                            <h3>Healthcare Initiative</h3>
+                            <p>₹1,000 of ₹8,000 raised</p>
+                            <div class="mini-progress">
+                                <div class="mini-progress-fill" style="width: 12.5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<section class="card activity-card slide-up">
+                <div class="card-header">
+                    <h2><i class="fas fa-bell"></i> Recent Activity</h2>
+                </div>
+                <ul class="activity-list">
+                    <li>
+                        <i class="fas fa-donate activity-icon"></i>
+                        <div class="activity-content">
+                            <p>New donation of ₹500 received for "Education for All"</p>
+                            <span class="activity-time">2 hours ago</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-share-alt activity-icon"></i>
+                        <div class="activity-content">
+                            <p>You shared the Healthcare campaign on social media</p>
+                            <span class="activity-time">5 hours ago</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-plus activity-icon"></i>
+                        <div class="activity-content">
+                            <p>New supporter joined your network</p>
+                            <span class="activity-time">Yesterday</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="fade-in">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="company logo.jpg" alt="logo">
+                <span>She Can Foundation</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 She Can Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('darkModeToggle');
+        toggleBtn.addEventListener('click',() => {
+            document.body.classList.toggle('dark-mode');
+            toggleBtn.textContent = document.body.classList.contains('dark-mode') ? "☀" : '🌙'
+        });
+    </script>
+</body>
+</html>
